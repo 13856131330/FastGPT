@@ -50,7 +50,7 @@ export const defaultFormData: ImportFormType = {
 
   imageIndex: false,
   autoIndexes: false,
-  indexPrefixTitle: false,
+  indexPrefixTitle: true,
 
   chunkSettingMode: ChunkSettingModeEnum.auto,
   chunkSplitMode: DataChunkSplitModeEnum.paragraph,
