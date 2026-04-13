@@ -241,8 +241,7 @@ export const getTrainingModeByCollection = ({
   }
   if (
     trainingType === DatasetCollectionDataProcessModeEnum.chunk &&
-    autoIndexes &&
-    global.feConfigs?.isPlus
+    autoIndexes
   ) {
     return TrainingModeEnum.auto;
   }

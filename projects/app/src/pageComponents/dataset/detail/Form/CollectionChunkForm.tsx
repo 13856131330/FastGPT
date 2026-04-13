@@ -299,13 +299,14 @@ const CollectionChunkForm = ({ form }: { form: UseFormReturn<CollectionChunkForm
               <>
                 <HStack flex={'1'} spacing={1}>
                   <MyTooltip label={!feConfigs?.isPlus ? t('common:commercial_function_tip') : ''}>
+                    <span>
                     <Checkbox
-                      isDisabled={!feConfigs?.isPlus}
                       isChecked={autoIndexes}
                       {...register('autoIndexes')}
                     >
                       <FormLabel>{t('dataset:auto_indexes')}</FormLabel>
                     </Checkbox>
+                    </span>
                   </MyTooltip>
                   <QuestionTip label={t('dataset:auto_indexes_tips')} />
                 </HStack>
