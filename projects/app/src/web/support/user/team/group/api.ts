@@ -1,0 +1,27 @@
+import { DELETE, GET, POST, PUT } from '@/web/common/api/request';
+import { type GetGroupListBody } from '@fastgpt/global/support/permission/memberGroup/api';
+import type {
+  GroupMemberItemType,
+  MemberGroupListItemType
+} from '@fastgpt/global/support/permission/memberGroup/type';
+import type {
+  postCreateGroupData,
+  putUpdateGroupData
+} from '@fastgpt/global/support/user/team/group/api';
+
+export const getGroupList = <T extends boolean>(data: GetGroupListBody) =>
+  POST<MemberGroupListItemType<T>[]>('/support/user/team/group/list', data);
+export const postCreateGroup = (data: postCreateGroupData) =>
+  POST('/support/user/team/group/create', data);
+
+export const deleteGroup = (groupId: string) =>
+  DELETE('/support/user/team/group/delete', { groupId });
+
+export const putUpdateGroup = (data: putUpdateGroupData) =>
+  PUT('/support/user/team/group/update', data);
+
+export const getGroupMembers = (groupId: string) =>
+  GET<GroupMemberItemType[]>(`/support/user/team/group/members`, { groupId });
+
+export const putGroupChangeOwner = (groupId: string, tmbId: string) =>
+  PUT(`/support/user/team/group/changeOwner`, { groupId, tmbId });
