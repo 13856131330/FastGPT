@@ -160,7 +160,7 @@ const LogoSection = () => {
       justifyContent={isCollapsed ? 'center' : 'space-between'}
     >
       <AnimatedSection show={!isCollapsed}>
-        <Box fontSize="34px" fontWeight={700} color="myGray.1000" lineHeight={1}>
+        <Box fontSize="24px" fontWeight={700} color="myGray.1000" lineHeight={1}>
           LawAssistant
         </Box>
       </AnimatedSection>

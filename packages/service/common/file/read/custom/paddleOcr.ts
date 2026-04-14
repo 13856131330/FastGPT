@@ -135,10 +135,26 @@ export const downloadJsonlAndBuildMarkdown = async ({
           text = text.replace(/<img[^>]*>/g, '');
           // 2. Remove all Markdown image tags ![alt](url)
           text = text.replace(/!\[.*?\]\(.*?\)/g, '');
+          
+          // --- 新增：暴力清洗恶心的 HTML 表格，将其降维为纯文本表格 ---
+          // 把所有带样式的 <td> 替换为竖线分隔符
+          text = text.replace(/<td[^>]*>/g, ' | ');
+          // 移除 </td>
+          text = text.replace(/<\/td>/g, '');
+          // 移除 <tr>，把 </tr> 替换为换行符
+          text = text.replace(/<tr[^>]*>/g, '');
+          text = text.replace(/<\/tr>/g, ' |\n');
+          // 移除 <table>, <tbody> 等外层标签
+          text = text.replace(/<\/?(table|tbody|thead|th)[^>]*>/g, '');
+          // -------------------------------------------------------------
+
           // 3. Remove empty div tags (often left behind after removing images)
           text = text.replace(/<div[^>]*>\s*<\/div>/g, '');
           // 4. Remove any remaining div tags just to be safe, keeping their inner text
           text = text.replace(/<\/?div[^>]*>/g, '');
+
+          // 5. 替换多个连续的空格（可能由去除标签产生）为单个空格，避免冗余
+          text = text.replace(/ {2,}/g, ' ');
 
           fullMarkdown += text.trim() + '\n\n---\n\n';
         }

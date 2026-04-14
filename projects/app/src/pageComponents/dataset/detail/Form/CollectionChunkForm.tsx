@@ -298,7 +298,7 @@ const CollectionChunkForm = ({ form }: { form: UseFormReturn<CollectionChunkForm
             feConfigs?.show_dataset_enhance !== false && (
               <>
                 <HStack flex={'1'} spacing={1}>
-                  <MyTooltip label={!feConfigs?.isPlus ? t('common:commercial_function_tip') : ''}>
+                  <MyTooltip label={''}>
                     <span>
                     <Checkbox
                       isChecked={autoIndexes}

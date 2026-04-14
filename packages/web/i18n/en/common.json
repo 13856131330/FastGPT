@@ -251,7 +251,7 @@
   "core.app.Share link desc": "Create shareable links and support login-free use",
   "core.app.Share link desc detail": "You can directly share this model with other users for conversation, they can use it directly without logging in. Note, this feature will consume your account balance, please keep the link safe!",
   "core.app.TTS": "Voice Playback",
-  "core.app.TTS Tip": "After enabling, you can use the voice playback function after each conversation. Using this feature may incur additional costs.",
+  "core.app.TTS Tip": "After enabling, you can use the voice playback function after each conversation.",
   "core.app.TTS start": "Read Content",
   "core.app.Team tags": "Team Tags",
   "core.app.Welcome Text": "Conversation Opening",
